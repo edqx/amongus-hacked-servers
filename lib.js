@@ -1,3 +1,5 @@
+// Enums
+
 const languages = {
     "English": 0x00,
     "Spanish": 0x02,
@@ -37,6 +39,7 @@ const distances = {
     0x2: "Long"
 };
 
+// Offsets for each value.
 const offsets = {
     iMaxPlayers: 0x01,
     iLanguage: 0x02,
@@ -59,6 +62,34 @@ const offsets = {
     bVisualTasks: 0x2b
 };
 
+/**
+ * @typedef AmongUsGameOptions
+ * @property {Number} maxPlayers
+ * @property {"English"|"Spanish"|"Korean"|"Russian"|"Portuguese"|"Arabic"|"Filipino"|"Polish"|"Other"} language
+ * @property {"The Skeld"|"Mira HQ"|"Polus"} map
+ * @property {Number} playerSpeed
+ * @property {Number} crewmateVision
+ * @property {Number} imposterVision
+ * @property {Number} killCooldown
+ * @property {Number} commonTasks
+ * @property {Number} longTasks
+ * @property {Number} shortTasks
+ * @property {Number} imposters
+ * @property {Number} emergencyMeetings
+ * @property {Number} killDistance
+ * @property {Number} discussionTime
+ * @property {Number} votingTime
+ * @property {Boolean} useRecommendedSettings
+ * @property {Number} emergencyCooldown
+ * @property {Boolean} confirmEjects
+ * @property {Boolean} visualTasks
+ */
+
+/**
+ * Get game settings from a gameHostOptions file buffer.
+ * @param {Buffer} buffer The buffer to retrieve the game settings for.
+ * @returns {AmongUsGameOptions}
+ */
 function getSettings(buffer) {
     return {
         maxPlayers: buffer.readUInt8(offsets.iMaxPlayers),
@@ -83,10 +114,15 @@ function getSettings(buffer) {
     }
 }
 
+/**
+ * Write game settings to a gameHostOptions file buffer.
+ * @param {AmongUsGameOptions} settings
+ * @returns {Buffer}
+ */
 function writeSettings(settings) {
     const template_buffer = Buffer.alloc(0x2c);
 
-    template_buffer.writeUInt8(0x3, 0x0);
+    template_buffer.writeUInt8(0x3, 0x0); // unknown values
     template_buffer.writeUInt8(0x1, 0x3);
     template_buffer.writeUInt8(settings.maxPlayers, offsets.iMaxPlayers);
     template_buffer.writeUInt8(languages[settings.language], offsets.iLanguage);
