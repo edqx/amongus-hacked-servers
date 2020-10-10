@@ -4,10 +4,15 @@ html, body {
     padding: 0;
     margin: 0;
     background-color: #181818;
+    color: white;
 }
 
 input {
     float: right;
+}
+
+input:not([type=checkbox]):not([type=radio]) {
+    width: 100px;
 }
 
 form {
@@ -15,7 +20,7 @@ form {
 }
 
 a {
-    color: blue;
+    color: lightskyblue;
     text-decoration: none;
 }
 
@@ -35,7 +40,7 @@ a:hover {
 
 .center-box {
     width: 100%;
-    background-color: rgba(255, 255, 255, .45);
+    background-color: #1f2223;
     padding: 16px;
     border-radius: 8px;
     display: flex;
