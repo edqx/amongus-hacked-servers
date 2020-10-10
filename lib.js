@@ -76,7 +76,7 @@ const offsets = {
  * @property {Number} shortTasks
  * @property {Number} imposters
  * @property {Number} emergencyMeetings
- * @property {Number} killDistance
+ * @property {"Short"|"Medium"|"Long"} killDistance
  * @property {Number} discussionTime
  * @property {Number} votingTime
  * @property {Boolean} useRecommendedSettings
