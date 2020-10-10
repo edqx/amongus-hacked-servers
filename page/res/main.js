@@ -37,3 +37,29 @@ function downloadFile() {
         + "&confirmEjects=" + confirmEjects
         + "&visualTasks=" + visualTasks;
 }
+
+window.onload = function () {
+    const inputs = document.getElementsByTagName("input");
+
+    for (let i = 0; i < inputs.length; i++) {
+        const input = inputs[i];
+
+        if (input.type === "number") {
+            input.onkeyup = function () {
+                if (parseFloat(this.value) < parseFloat(this.min)) {
+                    this.value = this.min;
+                }
+
+                if (parseFloat(this.value) > parseFloat(this.max)) {
+                    this.value = this.max;
+                }
+            }
+
+            input.onchange = function () {
+                if (!this.value) {
+                    this.value = this.min;
+                }
+            }
+        }
+    }
+}
