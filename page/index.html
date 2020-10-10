@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <script src="res/main.js"></script>
+        <link rel="stylesheet" href="res/main.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="center-box">
+                <div class="section">
+                    Max players:
+                    &nbsp;<input id="players" type="number" min="0" max="10" value="10"/><br><br>
+                    Imposters:
+                    <form>
+                        <input type="radio" name="imposters" value="1">
+                        <label for="1">1</label><br>
+
+                        <input type="radio" name="imposters" value="2" checked>
+                        <label for="2">2</label><br>
+
+                        <input type="radio" name="imposters" value="3">
+                        <label for="3">3</label><br>
+                    </form>
+                    Language:
+                    <form>
+                        <input type="radio" name="language" value="English" checked>
+                        <label>English</label><br>
+
+                        <input type="radio" name="language"value="Spanish">
+                        <label>Spanish</label><br>
+
+                        <input type="radio" name="language" value="Korean">
+                        <label>Korean</label><br>
+
+                        <input type="radio" name="language" value="Russian">
+                        <label>Russian</label><br>
+
+                        <input type="radio" name="language" value="Portuguese">
+                        <label>Portuguese</label><br>
+
+                        <input type="radio" name="language" value="Arabic">
+                        <label>Arabic</label><br>
+
+                        <input type="radio" name="language" value="Filipino">
+                        <label>Filipino</label><br>
+
+                        <input type="radio" name="language" value="Polish">
+                        <label>Polish</label><br>
+
+                        <input type="radio" name="language" value="Other">
+                        <label>Other</label><br>
+                    </form>
+                    Map:
+                    <form>
+                        <input type="radio" name="map" value="The Skeld" checked>
+                        <label>The Skeld</label><br>
+
+                        <input type="radio" name="map" value="Mira HQ">
+                        <label >Mira HQ</label><br>
+
+                        <input type="radio" name="map" value="Polus">
+                        <label>Polus</label><br>
+                    </form>
+                </div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="section">
+                    Player speed: <input id="player-speed" type="number" value="1.00" min="0.00" max="128.00" step="0.25"><br>
+                    Crewmate vision: <input id="crewmate-vision" type="number" value="1.00" min="0.00" max="16.00" step="0.25"><br>
+                    Imposter vision: <input id="imposter-vision" type="number"  value="1.00"min="0.00" max="16.00" step="0.25"><br>
+                    Kill cooldown: <input id="kill-cooldown" type="number" value="40.00" min="0.00" max="128.00" step="0.25"><br>
+                    Common tasks: <input id="common-tasks" type="number" value="1" min="0" max="255"><br>
+                    Long tasks: <input id="long-tasks" type="number" value="1" min="0" max="255"><br>
+                    Short tasks: <input id="short-tasks" type="number" value="2" min="0" max="255"><br>
+                    Emergency meetings: <input id="emergency-meetings" type="number" value="1" min="0" max="255"><br>
+                    Kill distance:
+                    <form>
+                        <input type="radio" name="kill-distance" value="Short">
+                        <label>Short</label><br>
+
+                        <input type="radio" name="kill-distance" value="Medium" checked>
+                        <label>Medium</label><br>
+
+                        <input type="radio" name="kill-distance" value="Long">
+                        <label>Long</label><br>
+                    </form>
+                    Discussion time: <input id="discussion-time" type="number" value="15" min="0" max="255"><br>
+                    Voting time: <input id="voting-time" type="number" value="120" min="0" max="255"><br>
+                    Emergency cooldown: <input id="emergency-cooldown" type="number" value="15" min="0" max="255"><br>
+                    Confirm ejects: <input id="confirm-ejects" type="checkbox" value="off"><br>
+                    Visual tasks: <input id="visual-tasks" type="checkbox" value="off"><br><br><br><br>
+                    <button onclick="downloadFile()">Download ⭳</button>
+                </div>
+            </div>
+            <div class="center-box">
+                <div class="section">
+                    You can choose options for your Among Us servers that you can't normally choose.
+                    Some are limited however, e.g. the player count, because Among Us rejects your server
+                    create request with any more. Others are also maxed at 255, as this is the max
+                    value allowed for unsigned chars (which is what the game uses for these values.).
+                    To install your host options, click download and replace the file with the same name
+                    in "Appdata\LocalLow\Innersloth\Among Us" with the file that you downloaded.
+
+                    Created by "weakeyes"#4248 on discord, or <a href="https://github.com/edqx">edqx</a> on github.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
