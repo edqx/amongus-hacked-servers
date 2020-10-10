@@ -1,5 +1,7 @@
 # Among us hacked servers
 
+Available for preview at https://amongus.thechimp.store
+
 ## Installation
 ### Prerequisites
 * [Node.js](https://nodejs.org)
@@ -14,7 +16,7 @@ go into the folder.
 Install packages using `npm install`. This should only take a few seconds.
 
 ### Step 3
-Run the program using `npm start`. This will start a local server which you can access through your browser at https://localhost:8080
+Run the program using `npm start`. This will start a local server which you can access through your browser at http://localhost:8080
 
 ## Notes
 I am not responsible for anything you do using this library.
