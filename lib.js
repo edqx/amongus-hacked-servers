@@ -122,9 +122,9 @@ function getSettings(buffer) {
 function writeSettings(settings) {
     const template_buffer = Buffer.alloc(0x2c);
 
-    if (settings.useRecommendedSettings === "false") settings.useRecommendedSettings = false;
-    if (settings.confirmEjects === "false") settings.confirmEjects = false;
-    if (settings.visualTasks === "false") settings.visualTasks = false;
+    if (settings.useRecommendedSettings === "off") settings.useRecommendedSettings = false;
+    if (settings.confirmEjects === "off") settings.confirmEjects = false;
+    if (settings.visualTasks === "off") settings.visualTasks = false;
 
     template_buffer.writeUInt8(0x3, 0x0); // unknown values
 
