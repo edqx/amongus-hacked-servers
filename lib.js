@@ -122,10 +122,19 @@ function getSettings(buffer) {
 function writeSettings(settings) {
     const template_buffer = Buffer.alloc(0x2c);
 
+    if (settings.useRecommendedSettings === "false") settings.useRecommendedSettings = false;
+    if (settings.confirmEjects === "false") settings.confirmEjects = false;
+    if (settings.visualTasks === "false") settings.visualTasks = false;
+
     template_buffer.writeUInt8(0x3, 0x0); // unknown values
-    template_buffer.writeUInt8(0x1, 0x3);
+
     template_buffer.writeUInt8(settings.maxPlayers, offsets.iMaxPlayers);
     template_buffer.writeUInt8(languages[settings.language], offsets.iLanguage);
+    
+    if (settings.language === "English") {
+        template_buffer.writeUInt8(0x01, offsets.iLanguage + 1); // Not sure, when the language is English, it requires a 0x1 at 0x03
+    }
+
     template_buffer.writeUInt8(maps[settings.map] || 0, offsets.iMap);
     template_buffer.writeFloatLE(settings.playerSpeed, offsets.fPlayerSpeed);
     template_buffer.writeFloatLE(settings.crewmateVision, offsets.fCrewmateVision);
