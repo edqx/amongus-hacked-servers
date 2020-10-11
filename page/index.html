@@ -69,18 +69,18 @@
             &nbsp;&nbsp;&nbsp;
             <div class="section">
                 <div class="option">
-                    Player speed: <input id="player-speed" type="number" value="1" min="0" max="128" step="0.25"><br>
+                    Player speed: <input id="player-speed" type="number" value="1" min="0" max="2147483647" step="0.25"><br>
                 </div>
                 <div class="option">
-                    Crewmate vision: <input id="crewmate-vision" type="number" value="1" min="0" max="16"
+                    Crewmate vision: <input id="crewmate-vision" type="number" value="1" min="0" max="2147483647"
                         step="0.25"><br>
                 </div>
                 <div class="option">
-                    Imposter vision: <input id="imposter-vision" type="number" value="1" min="0" max="16"
+                    Imposter vision: <input id="imposter-vision" type="number" value="1" min="0" max="2147483647"
                         step="0.25"><br>
                 </div>
                 <div class="option">
-                    Kill cooldown: <input id="kill-cooldown" type="number" value="4" min="0" max="128" step="0.25"><br>
+                    Kill cooldown: <input id="kill-cooldown" type="number" value="45" min="0" max="2147483647" step="0.25"><br>
                 </div>
                 <div class="option">
                     Common tasks: <input id="common-tasks" type="number" value="1" min="0" max="255"><br>
@@ -131,7 +131,8 @@
                     create request with any more. Others are also maxed at 255, as this is the max
                     value allowed for unsigned chars (which is what the game uses for these values.).
                     To install your host options, click download and replace the file with the same name
-                    in "Appdata\LocalLow\Innersloth\Among Us" with the file that you downloaded.
+                    in "Appdata\LocalLow\Innersloth\Among Us" with the file that you downloaded. If you
+                    are on android, the folder is in "Android\Data\com.innersloth.spacemafia\files".
 
                     Created by "weakeyes"#4248 on discord, or <a href="https://github.com/edqx">edqx</a> on github.
                 </div>
